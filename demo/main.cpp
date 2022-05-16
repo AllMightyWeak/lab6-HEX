@@ -1,4 +1,4 @@
-// Copyright by Enigma
+// Copyright by AllMightyWeak
 
 #include "picosha2.h"
 #include "hash.hpp"
@@ -27,7 +27,7 @@ void hashGenerator(JsonFiler& j) {
     if (lastChar == Ending) {
       BOOST_LOG_TRIVIAL(info)
           << "Necessary ending found in hash |" << hash
-          << "| generarted from string |" << genstring << "|";
+          << "| generarted from string | " << genstring << "|";
       if (addToJson) {
         j.NewElement(genstring, hash, timestamp);
       }

@@ -1,18 +1,18 @@
-// Copyright by Enigma
+// Copyright by AllMightyWeak
 
 #include "hash.hpp"
 
 void SetUpLogging() {
     auto TraceFileLogger = boost::log::add_file_log(
             boost::log::keywords::file_name =
-                    "/home/enigma/twinLabs/c++ developer/lab6/logs/"
+                    "/home/user/Desktop/lab6-HEX/"
                     "TraceLog_%N.log",
             boost::log::keywords::rotation_size = 10 * 1024 * 1024,
             boost::log::keywords::format =
                     "[%TimeStamp%][%Severity%][%ThreadID%]: %Message%");
     auto InfoFileLogger = boost::log::add_file_log(
             boost::log::keywords::file_name =
-                    "/home/enigma/twinLabs/c++ developer/lab6/logs/"
+                    "/home/user/Desktop/lab6-HEX/"
                     "TraceLog_%N.log",
             boost::log::keywords::format =
                     "[%TimeStamp%][%Severity%][%ThreadID%]: %Message%");
@@ -20,7 +20,7 @@ void SetUpLogging() {
             std::cout, boost::log::keywords::format =
                     "[%TimeStamp%][%Severity%][%ThreadID%]: %Message%");
 
-    TraceFileLogger->set_filter(boost::log::trivial::severity >=
+    TraceFileLogger->set_filter(boost::log::trivial::severity ==
                                 boost::log::trivial::trace);
     InfoFileLogger->set_filter(boost::log::trivial::severity ==
                                boost::log::trivial::info);
